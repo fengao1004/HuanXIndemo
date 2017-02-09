@@ -496,7 +496,7 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        pd.dismiss();
+                        pd.dismiss() ;
                     }
                 });
                 getActivity().finish();
