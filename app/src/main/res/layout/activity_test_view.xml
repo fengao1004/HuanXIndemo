@@ -22,8 +22,11 @@
         android:text="删除" />
 
     <com.dayang.huanxindemo.view.MaxHeightRecyclerView
+        android:background="#ff00ff"
         android:id="@+id/max"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></com.dayang.huanxindemo.view.MaxHeightRecyclerView>
+        android:layout_height="wrap_content">
+
+    </com.dayang.huanxindemo.view.MaxHeightRecyclerView>
 
 </LinearLayout>

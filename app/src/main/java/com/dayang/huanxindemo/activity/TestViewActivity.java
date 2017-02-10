@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -29,14 +30,16 @@ public class TestViewActivity extends AppCompatActivity {
         max = (MaxHeightRecyclerView) findViewById(R.id.max);
         add = (Button) findViewById(R.id.add);
         list = new ArrayList<>();
+        list.add("");
         adapter = new MaxAdapter(list, this);
         max.setLayoutManager(new LinearLayoutManager(this));
+        max.setAdapter(adapter);
         max.setItemAnimator(new DefaultItemAnimator());
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 list.add("");
-                adapter.notifyItemInserted(list.size() - 1);
+                adapter.notifyDataSetChanged();
             }
         });
         delete = (Button) findViewById(R.id.delete);
@@ -45,7 +48,7 @@ public class TestViewActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (list.size() > 0) {
                     list.remove(list.size() - 1);
-                    adapter.notifyItemInserted(list.size() - 1);
+                    adapter.notifyItemRemoved(list.size() - 1);
                 } else {
                     Toast.makeText(getApplicationContext(), "已经删光了", 0).show();
                 }
