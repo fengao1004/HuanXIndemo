@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/star"
     android:orientation="vertical"
-    tools:context="com.dayang.huanxindemo.activity.MainActivity">
+    tools:context="com.dayang.huanxindemo.activity.LoginActivity">
 
     <EditText
         android:id="@+id/username"

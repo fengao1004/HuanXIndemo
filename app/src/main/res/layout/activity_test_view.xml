@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context="com.dayang.huanxindemo.activity.TestViewActivity">
+
+    <Button
+        android:id="@+id/add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="增加" />
+
+    <Button
+        android:id="@+id/delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="删除" />
+
+    <com.dayang.huanxindemo.view.MaxHeightRecyclerView
+        android:id="@+id/max"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></com.dayang.huanxindemo.view.MaxHeightRecyclerView>
+
+</LinearLayout>
