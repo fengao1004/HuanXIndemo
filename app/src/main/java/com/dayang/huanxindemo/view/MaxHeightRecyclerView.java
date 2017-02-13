@@ -6,6 +6,8 @@ import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.util.Log;
 
+import com.dayang.huanxindemo.util.FontDisplayUtil;
+
 /**
  * Created by 冯傲 on 2017/2/10.
  * e-mail 897840134@qq.com
@@ -26,23 +28,9 @@ public class MaxHeightRecyclerView extends RecyclerView {
 
     @Override
     protected void onMeasure(int widthSpec, int heightSpec) {
-        int mode = MeasureSpec.getMode(heightSpec);
-        int size = MeasureSpec.getSize(heightSpec);
-        if(mode==MeasureSpec.AT_MOST){
-            Log.i("fengao", "onMeasure: AT_MOST");
-        }
-        if(mode==MeasureSpec.EXACTLY){
-            Log.i("fengao", "onMeasure: EXACTLY");
-        }
-        if(mode==MeasureSpec.UNSPECIFIED){
-            Log.i("fengao", "onMeasure: UNSPECIFIED");
-        }
-        Log.i("fengao", "onMeasure: "+size);
-        if(size<500){
-            MeasureSpec.makeMeasureSpec(size, mode);
-        }else {
-            MeasureSpec.makeMeasureSpec(size, mode);
-        }
-        super.onMeasure(widthSpec, heightSpec);
+        float width = getWidth();
+        float height = width * 0.8f;
+        int maxHeightSpec = MeasureSpec.makeMeasureSpec((int) height, MeasureSpec.AT_MOST);
+        super.onMeasure(widthSpec, maxHeightSpec);
     }
 }
